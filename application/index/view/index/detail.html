@@ -1,34 +1,32 @@
 ﻿<!DOCTYPE HTML>
 <html>
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8,ie=7">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <title>YzmCMS模板-多骨鱼站点主题_YzmCMS博客_袁志蒙个人博客</title>
-    <meta name="keywords" content="yzmcms模板,多骨鱼模板,个人博客模板,html模板"/>
-    <meta name="description"
-          content="分享一款非常漂亮的YzmCMS前端模板,该模板由多骨鱼先生奉献，模板名称：duoguyu_v3(多骨鱼)模板，演示地址：www.duoguyu.com,安装方法：1.将下载好的模板解压，对应目录复制到您的站点..."/>
-    <link rel='stylesheet' id='open_social_css-css' href='css/os.css' type='text/css' media='all'/>
-    <link rel="stylesheet" href="static/css/style.css" media="all">
-    <link href="static/css/font-awesome.min.css" rel="stylesheet" media="screen">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>浅谈PHP框架命令行_YzmCMS博客_袁志蒙个人博客</title>
+    <meta name="keywords" content="php命令行,cli模式框架,$_SERVER['argv'],#!/usr/bin/env" />
+	<meta name="description" content="最近发现好几个框架都用上了PHP命令行来创建模块或控制器，这种模式对初学者的不太友好，尤其是刚接触MVC思想的人，又提高了入门难度，今天我就简单的说一下他们的原理。在PHP命令行模式（cli模式）下，..." />
+    <link rel='stylesheet' id='open_social_css-css' href='/static/css/os.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/static/css/style.css" media="all">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet" media="screen">
+  </head>
 
-<body class="single single-post single-format-standard">
-<div class="placeholder"></div>
-<!--[if lt IE 9]>
-<script src="static/js/html5.js"></script>
-<![endif]-->
-<script src="static/js/jquery.js"></script>
+  <body class="single single-post single-format-standard">
+    <div class="placeholder"></div>
+    <!--[if lt IE 9]>
+    <script src="/static/js/html5.js"></script>
+    <![endif]-->
+    <script src="/static/js/jquery.js"></script>
 <script>window._deel = {
     maillist: '',
     maillistCode: '',
     commenton: 0,
     roll: [0, 0]
 }</script>
-<script type="text/javascript">$(function () {
-    $(window).scroll(function () {
+<script type="text/javascript">$(function() {
+    $(window).scroll(function() {
         $offset = $('.placeholder').offset(); //不能用自身的div，不然滚动起来会很卡
         if ($(window).scrollTop() > $offset.top) {
             $('.header').css({
@@ -45,427 +43,236 @@
 })
 </script>
 <header class="header" style="height: 52px;">
-    <div class="navbar">
-        <h1 class="logo">
-            <a href="http://blog.yzmcms.com/" title="YzmCMS博客_袁志蒙个人博客" alt="YzmCMS博客_袁志蒙个人博客">YzmCMS博客_袁志蒙个人博客</a></h1>
-        <ul class="nav">
-            <li class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-home"><a
-                    href="http://blog.yzmcms.com/">首页</a></li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="http://blog.yzmcms.com/qianduan/">前端</a>
-                <ul class="sub-menu">
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/htm/">html</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/css/">css</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/js/">js</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="http://blog.yzmcms.com/chengxu/">程序</a>
-                <ul class="sub-menu">
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/php/">php</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/mysql/">mysql</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/server/">server</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="http://blog.yzmcms.com/shenghuo/">生活</a>
-                <ul class="sub-menu"></ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="http://blog.yzmcms.com/yule/">娱乐</a>
-                <ul class="sub-menu"></ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="http://blog.yzmcms.com/guanyu/">关于</a>
-                <ul class="sub-menu">
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/plus/guestbook.php">留言联系</a></li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a
-                            href="http://blog.yzmcms.com/guanyuzuozhe/">关于作者</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="menu pull-right">
-            <form name="formsearch" action="http://blog.yzmcms.com/plus/search.php" method="get">
-                <input class="search-input" name="q" id="search-keyword" type="text" required="required"
-                       placeholder=" 输入你要找的内容"/>
-                <button type="submit" class="searchbtn" name="search" title="搜一下！" value="1">
-                    <i class="fa"></i>
-                </button>
-            </form>
-        </div>
+  <div class="navbar">
+	<h1 class="logo">
+	  <a href="http://blog.yzmcms.com/" title="YzmCMS博客_袁志蒙个人博客" alt="YzmCMS博客_袁志蒙个人博客">YzmCMS博客_袁志蒙个人博客</a></h1>
+	<ul class="nav">
+	  <li class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-home"><a href="http://blog.yzmcms.com/">首页</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+		<a href="http://blog.yzmcms.com/qianduan/">前端</a><ul class="sub-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/htm/">html</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/static/css/">css</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/static/js/">js</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom  current-menu-item menu-item-has-children">
+		<a href="http://blog.yzmcms.com/chengxu/">程序</a><ul class="sub-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/php/">php</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/mysql/">mysql</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/server/">server</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+		<a href="http://blog.yzmcms.com/shenghuo/">生活</a><ul class="sub-menu"></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+		<a href="http://blog.yzmcms.com/yule/">娱乐</a><ul class="sub-menu"></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+		<a href="http://blog.yzmcms.com/guanyu/">关于</a><ul class="sub-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/plus/guestbook.php">留言联系</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://blog.yzmcms.com/guanyuzuozhe/">关于作者</a></li></ul></li>
+	</ul>
+	<div class="menu pull-right">
+	  <form name="formsearch" action="http://blog.yzmcms.com/plus/search.php" method="get">
+		<input class="search-input" name="q" id="search-keyword" type="text" required="required" placeholder=" 输入你要找的内容" />
+		<button type="submit" class="searchbtn" name="search" title="搜一下！" value="1">
+		  <i class="fa"></i>
+		</button>
+	  </form>
+	</div>
 
-        <div id="mobile_nav">
-            <div class="nav_box"><span class="navicon"></span></div>
-            <ul class="nav_ul">
-                <li><a href="http://blog.yzmcms.com/">首页</a></li>
-                <li><a href="http://blog.yzmcms.com/qianduan/">前端</a></li>
-                <li><a href="http://blog.yzmcms.com/chengxu/">程序</a></li>
-                <li><a href="http://blog.yzmcms.com/shenghuo/">生活</a></li>
-                <li><a href="http://blog.yzmcms.com/yule/">娱乐</a></li>
-                <li><a href="http://blog.yzmcms.com/guanyu/">关于</a></li>
-                <li><a href="http://blog.yzmcms.com/plus/guestbook.php">留言</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
-<section class="container">
-    <div class="content-wrap">
+	<div id="mobile_nav">
+		<div class="nav_box"><span class="navicon"></span></div>
+		<ul class="nav_ul">
+			<li><a href="http://blog.yzmcms.com/">首页</a></li>
+			<li><a href="http://blog.yzmcms.com/qianduan/">前端</a></li><li><a href="http://blog.yzmcms.com/chengxu/">程序</a></li><li><a href="http://blog.yzmcms.com/shenghuo/">生活</a></li><li><a href="http://blog.yzmcms.com/yule/">娱乐</a></li><li><a href="http://blog.yzmcms.com/guanyu/">关于</a></li>			<li><a href="http://blog.yzmcms.com/plus/guestbook.php">留言</a></li>
+		</ul>
+	</div>
+
+</header>    <section class="container">
+      <div class="content-wrap">
         <div class="content">
-            <header class="article-header">
-                <h1 class="article-title"><h1>YzmCMS模板-多骨鱼站点主题</h1></h1>
-                <div class="meta">
+          <header class="article-header">
+            <h1 class="article-title"><h1>浅谈PHP框架命令行</h1></h1>
+            <div class="meta">
               <span class="muted">
                 <i class="icon-user icon12"></i>
                 袁志蒙</span>
-                    <time class="muted">
-                        <i class="ico icon-time icon12"></i>2018-04-02 22:22:12
-                    </time>
-                    <span class="muted">
-                <i class="ico icon-eye-open icon12"></i><script type="text/javascript"
-                                                                src="static/js/count.js"></script>次浏览</span>
-                </div>
-            </header>
-            <article class="article-content">
-                <blockquote>
-                    <p><strong>摘要：</strong>分享一款非常漂亮的YzmCMS前端模板,该模板由多骨鱼先生奉献，模板名称：duoguyu_v3(多骨鱼)模板，演示地址：www.duoguyu.com,安装方法：1.将下载好的模板解压，对应目录复制到您的站点...
-                    </p>
-                </blockquote>
-                <p>模板名称：duoguyu_v3(多骨鱼)模板</p>
-                <p>模板作者：多骨鱼</p>
-                <p>演示地址：<a href="http://www.duoguyu.com/" target="_blank" title="多骨鱼">www.duoguyu.com</a></p>
-                <p>模板下载：<a href="http://www.yzmcms.com/uploads/201804/02/180402092156521.zip" title="yzmcms模板下载">duoguyu_v3(多骨鱼)模板</a>
-                </p>
-                <p><br/></p>
-                <p><strong>安装方法：</strong></p>
-                <p>1.将下载好的模板解压，对应目录复制到您的站点。</p>
-                <p>2.登录后台-&gt;系统管理-&gt;系统设置-&gt;附加设置-&gt;模板风格，选择该模板风格。</p>
-                <p>3.更新缓存。</p>
-                <p><br/></p>
-                <p><strong>首页预览：</strong></p>
-                <p><img src="static/picture/15226775985280.png"
-                        _src="http://blog.yzmcms.com/uploads/20180402/15226775985280.png"/></p>
-                <p><br/></p>
-                <div class="related-post">
-                    <h6>随机新闻</h6>
-                    <dl class="fix">
-                        <div id='tag741ea220ff5887504d724069fe0ee1bf'>
-                            <dd><a href="http://blog.yzmcms.com/html/htm/30.html" title="分享一例Canvas画的猴子">
-                                <img src="static/picture/20160727111527762.jpg" alt="分享一例Canvas画的猴子"/>
-                                <span>分享一例Canvas画的猴子</span></a></dd>
-                            <dd><a href="http://blog.yzmcms.com/html/htm/112.html" title="YzmCMS红色响应式博客模板">
-                                <img src="static/picture/20170912181019710.jpg" alt="YzmCMS红色响应式博客模板"/>
-                                <span>YzmCMS红色响应式博客模板</span></a></dd>
-                            <dd><a href="http://blog.yzmcms.com/html/htm/116.html"
-                                   title="解决 'autocomplete=&quot;off&quot;' 无效 的问题">
-                                <img src="static/picture/20170928112604659.png"
-                                     alt="解决 'autocomplete=&quot;off&quot;' 无效 的问题"/>
-                                <span>解决 'autocomplete=&quot;off&quot;' 无效 的问题</span></a></dd>
-                            <dd><a href="http://blog.yzmcms.com/html/htm/133.html" title="YzmCMS响应式橙色大气html5企业网站模板">
-                                <img src="static/picture/180201081943386.jpg" alt="YzmCMS响应式橙色大气html5企业网站模板"/>
-                                <span>YzmCMS响应式橙色大气html5企业网站模板</span></a></dd>
-                            <dd><a href="http://blog.yzmcms.com/html/htm/37.html" title="分享一例Canvas画的钻石">
-                                <img src="static/picture/20160802162235833.jpg" alt="分享一例Canvas画的钻石"/>
-                                <span>分享一例Canvas画的钻石</span></a></dd>
-                        </div>
-                    </dl>
-                </div>
-                <!--related:end-->
-            </article>
-            <nav class="article-nav">
-                <span class="article-nav-prev">上一篇：<a href="http://blog.yzmcms.com/html/htm/133.html">YzmCMS响应式橙色大气html5企业网站模板</a></span>
-                <span class="article-nav-next">下一篇：已经是最后一篇</span>
-            </nav>
-            <!--comment-->
-            <div id="tabs1" class="tab">
-                <div class="tab-menu clearfix">
-                    <a class="current" href="javascript:void(0)">文章评论</a>
-                </div>
-                <script type="text/javascript" src="static/js/jquery.qqface.js"></script>
-                <script type="text/javascript" src="static/js/js.js"></script>
-                <div class="comment_box">
-                    <div class="comment">
-                        <div class="com_form">
-                            <form action="http://blog.yzmcms.com/plus/comment.php" method="post"
-                                  onsubmit="return check_comm(this)">
-                                <input type="hidden" name="articleid" value="145">
-                                <input type="hidden" name="title" value="YzmCMS模板-多骨鱼站点主题">
-                                <input type="hidden" name="url" value="http://blog.yzmcms.com/html/htm/145.html">
-                                <input type="hidden" name="catid" value="6">
-                                <textarea class="textarea" id="content" name="content"
-                                          placeholder="让评论变得如此简单~"></textarea>
-                                <p><input type="submit" class="sub_btn" name="dosubmit" value="提交"
-                                          style="width:100px"><span class="emotion">表情</span><span class="yzm"><img
-                                        src="static/picture/code.php" onclick="this.src=this.src+'?'" class="codeimg"
-                                        title="看不清，换一张"><input type="text" name="code" required="required"></span></p>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="comment_list">
-                        <div class="comment_list_top">共1条评论</div>
-                        <div class="comment_list_body">
-                            <ul>
-                                <li>
-                                    <a class="user_pic" rel="nofollow" href="javascript:void(0);"><img
-                                            src="static/picture/default.gif"></a>
-                                    <div class="comm_right">
-                                        <a class="user_name" rel="nofollow" href="javascript:void(0);">YzmCMS博客网友</a>
-                                        <p>很赞，谢谢共享</p>
-                                        <p><span class="comm_time">2018-04-08 17:15:07</span> <a
-                                                href="javascript:toreply('11578');" class="comm_a">回复</a></p>
-
-                                        <div id="rep_11578" class="none">
-                                            <form action="http://blog.yzmcms.com/plus/comment.php" method="post"
-                                                  onsubmit="return check_rep(this)">
-                                                <input type="hidden" name="articleid" value="145">
-                                                <input type="hidden" name="title" value="YzmCMS模板-多骨鱼站点主题">
-                                                <input type="hidden" name="url"
-                                                       value="http://blog.yzmcms.com/html/htm/145.html">
-                                                <input type="hidden" name="catid" value="6">
-                                                <input type="hidden" name="reply" value="11578">
-                                                <input type="hidden" name="reply_to" value="YzmCMS博客网友">
-                                                <textarea name="content" class="textarea textarea2"
-                                                          placeholder="让评论变得如此简单~"></textarea>
-                                                <input type="submit" class="sub_btn static" name="dosubmit" value="提交"
-                                                       style="width:100px"><span class="yzm yzm2"><img
-                                                    src="static/picture/code.php" onclick="this.src=this.src+'?'"
-                                                    class="codeimg" title="看不清，换一张"><input type="text" name="code"
-                                                                                           required="required"></span>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--comment:end-->
-        </div>
-    </div>
-    <aside class="sidebar">
+              <time class="muted">
+                <i class="ico icon-time icon12"></i>2018-03-25 12:33:40</time>
+              <span class="muted">
+                <i class="ico icon-eye-open icon12"></i><script type="text/javascript" src="/static/js/count.js"></script>次浏览</span>
+              </div>
+              </header>
+              <article class="article-content">
+                  <blockquote>
+                  <p> <strong>摘要：</strong>最近发现好几个框架都用上了PHP命令行来创建模块或控制器，这种模式对初学者的不太友好，尤其是刚接触MVC思想的人，又提高了入门难度，今天我就简单的说一下他们的原理。在PHP命令行模式（cli模式）下，...</p>
+              </blockquote>
+              <p>最近发现好几个框架都用上了PHP命令行来创建模块或控制器，这种模式对初学者的不太友好，尤其是刚接触MVC思想的人，又提高了入门难度，今天我就简单的说一下他们的原理。</p><p>在PHP命令行模式（cli模式）下，可以用“ php php文件名 传入的参数 ”来运行PHP文件，例如我们创建一个test.php文件，然后运行命令：</p><pre class="brush:php;toolbar:false">php test.php aaa bbb</pre><p>而我们的test.php里面可以用 $_SERVER[&#39;argv&#39;] 来接收参数：</p><pre class="brush:php;toolbar:false">&lt;?php
+                  var_dump($_SERVER[&#39;argv&#39;]);</pre><p><strong>$_SERVER[&#39;argv&#39;]</strong></p><p>传递给该脚本的参数的数组。当脚本以命令行方式运行时，argv 变量传递给程序 C 语言样式的命令行参数。当通过 GET 方式调用时，该变量包含query string。</p><p>简单的来说，命令行下，第一个参数$_SERVER[&#39;argv&#39;][0]是脚本名，其余的是传递给脚本的参数.</p><p>运行结果</p><p><img src="/static/picture/15219528689367.png" _src="http://blog.yzmcms.com/uploads/20180325/15219528689367.png"/></p><p>既然能收到php命令行传入的参数了，那就可以根据你的需求任意的发挥了！</p><p><br/></p><p>其实到这里原理大家都明白了，但为了方便起见，总不能一直加.php的后缀吧，于是就在框架的根目录下创建了一个没有后缀的文件，例如我在框架的根目录下创建一个 文件名叫做 “yzm” 的文件，yzm的内容是这样的：</p><pre class="brush:php;toolbar:false">#!/usr/bin/env php
+              &lt;?php
+                  require &#39;test.php&#39;;</pre><p>#!/usr/bin/env php写法的好处</p><p>这种写法主要是为了让你的程序在不同的系统上都能适用。</p><p>不管你的php是在/usr/bin/php还是/usr/local/bin/php</p><p>#!/usr/bin/env php会自动的在你的用户PATH变量中所定义的目录中寻找php来执行的。</p><p><br/></p><p>同理，python脚本开头写法：</p><p>#!/usr/bin/env python</p><p><br/></p><p>而这个文件又包含了刚才我们创建的test.php文件，所以这一番下来就省去了输入后缀的麻烦，于是我们这样写跟刚才的效果是一样的：</p><p><img src="/static/picture/15219528848847.png" _src="http://blog.yzmcms.com/uploads/20180325/15219528848847.png"/></p>            <div class="related-post">
+                  <h6>随机新闻</h6>
+                  <dl class="fix">
+                  <div id='tag741ea220ff5887504d724069fe0ee1bf'>
+                  <dd><a href="http://blog.yzmcms.com/html/shenghuo/93.html" title="怎样不用ftp软件链接虚拟主机">
+                  <img src="/static/picture/20170407113525114.jpg" alt="怎样不用ftp软件链接虚拟主机" />
+                  <span>怎样不用ftp软件链接虚拟主机</span></a></dd><dd><a href="http://blog.yzmcms.com/html/server/125.html" title="FTP连接虚拟主机响应220 Welcome to www.net.cn FTP service.">
+              <img src="/static/picture/20170407113525114.jpg" alt="FTP连接虚拟主机响应220 Welcome to www.net.cn FTP service." />
+                  <span>FTP连接虚拟主机响应220 Welcome to www.net.cn FTP service.</span></a></dd><dd><a href="http://blog.yzmcms.com/html/server/121.html" title="Window下安装Redis并设置为开机启动">
+              <img src="/static/picture/20171227225821497.png" alt="Window下安装Redis并设置为开机启动" />
+                  <span>Window下安装Redis并设置为开机启动</span></a></dd><dd><a href="http://blog.yzmcms.com/html/server/143.html" title="浅谈PHP框架命令行">
+              <img src="/static/picture/20160705180250573.jpg" alt="浅谈PHP框架命令行" />
+                  <span>浅谈PHP框架命令行</span></a></dd><dd><a href="http://blog.yzmcms.com/html/server/123.html" title="Linux中常用操作命令">
+              <img src="/static/picture/20171230114530485.jpg" alt="Linux中常用操作命令" />
+                  <span>Linux中常用操作命令</span></a></dd>                </div>
+              </dl>
+              </div>
+              <!--related:end-->
+              </article>
+              <nav class="article-nav">
+                  <span class="article-nav-prev">上一篇：<a href="http://blog.yzmcms.com/html/server/125.html">FTP连接虚拟主机响应220 Welcome to www.net.cn FTP service.</a></span>
+              <span class="article-nav-next">下一篇：已经是最后一篇</span>
+              </nav>
+              <!--comment-->
+              <div id="tabs1" class="tab">
+                  <div class="tab-menu clearfix">
+                  <a class="current" href="javascript:void(0)">文章评论</a>
+                  </div>
+                  <script type="text/javascript" src="/static/js/jquery.qqface.js"></script>
+                  <script type="text/javascript" src="/static/js/js.js"></script>
+           <div class="comment_box">
+			<div class="comment">
+				<div class="com_form">
+				   <form action="http://blog.yzmcms.com/plus/comment.php" method="post"  onsubmit="return check_comm(this)">
+				    <input type="hidden" name="articleid" value="143">
+				    <input type="hidden" name="title" value="浅谈PHP框架命令行">
+				    <input type="hidden" name="url" value="http://blog.yzmcms.com/html/server/143.html">
+				    <input type="hidden" name="catid" value="13">
+					<textarea class="textarea" id="content" name="content" placeholder="让评论变得如此简单~"></textarea>
+					<p><input type="submit" class="sub_btn" name="dosubmit" value="提交" style="width:100px"><span class="emotion">表情</span><span class="yzm"><img src="/static/picture/code.php" onclick="this.src=this.src+'?'" class="codeimg" title="看不清，换一张"><input type="text" name="code" required="required"></span></p>
+				   </form>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="comment_list">
+				<div class="comment_list_top">共0条评论</div>
+				<div class="comment_list_body">
+				   <ul>
+				     <li>这篇文章还没有收到评论，赶紧来抢沙发吧~</li>				   </ul>
+				</div>
+			</div>
+		   </div>
+          </div>
+              <!--comment:end-->
+      </div>
+      </div>
+      <aside class="sidebar">
         <div class="widget">
-            <h3 class="widget_tit">热门标签</h3>
-            <div class="tag_list">
-                <ul>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=博客" target="_blank">博客</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=生活" target="_blank">生活</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=YzmCMS" target="_blank">YzmCMS</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=PHP" target="_blank">PHP</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=MySQL" target="_blank">MySQL</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=搞笑" target="_blank">搞笑</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=娱乐" target="_blank">娱乐</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=css" target="_blank">css</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=js" target="_blank">js</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=html" target="_blank">html</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=欣赏" target="_blank">欣赏</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=摄影" target="_blank">摄影</a></li>
-                    <li><a href="http://blog.yzmcms.com/plus/search.php?tag=服务器" target="_blank">服务器</a></li>
-                </ul>
-            </div>
+		  <h3 class="widget_tit">热门标签</h3>
+          <div class="tag_list">
+            <ul>
+			<li><a href="http://blog.yzmcms.com/plus/search.php?tag=博客" target="_blank">博客</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=生活" target="_blank">生活</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=YzmCMS" target="_blank">YzmCMS</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=PHP" target="_blank">PHP</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=MySQL" target="_blank">MySQL</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=搞笑" target="_blank">搞笑</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=娱乐" target="_blank">娱乐</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=css" target="_blank">css</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=js" target="_blank">js</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=html" target="_blank">html</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=欣赏" target="_blank">欣赏</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=摄影" target="_blank">摄影</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?tag=服务器" target="_blank">服务器</a></li>
+			</ul>
+          </div>
         </div>
         <div class="widget d_postlist">
-            <h3 class="widget_tit">推荐文章</h3>
-            <ul>
-                <li><a href="http://blog.yzmcms.com/html/htm/145.html">
+          <h3 class="widget_tit">推荐文章</h3>
+          <ul>
+			<li><a href="http://blog.yzmcms.com/html/server/143.html">
                 <span class="thumbnail">
-                  <img src="static/picture/th_15226775985280.png" alt="YzmCMS模板-多骨鱼站点主题"
-                       title="YzmCMS模板-多骨鱼站点主题"/></span>
-                    <span class="text">YzmCMS模板-多骨鱼站点主题</span>
-                    <span class="muted">2018-04-02</span>
-                    <span class="muted">
-                  <span class="ds-thread-count" data-replace="1">85次阅读</span>
+                  <img src="/static/picture/20160705180250573.jpg" alt="浅谈PHP框架命令行" title="浅谈PHP框架命令行"/></span>
+                <span class="text">浅谈PHP框架命令行</span>
+                <span class="muted">2018-03-25</span>
+                <span class="muted">
+                  <span class="ds-thread-count" data-replace="1">50次阅读</span>
                 </span>
-                </a></li>
-                <li><a href="http://blog.yzmcms.com/html/htm/133.html">
+              </a></li><li><a href="http://blog.yzmcms.com/html/server/125.html">
                 <span class="thumbnail">
-                  <img src="static/picture/180201081943386.jpg" alt="YzmCMS响应式橙色大气html5企业网站模板"
-                       title="YzmCMS响应式橙色大气html5企业网站模板"/></span>
-                    <span class="text">YzmCMS响应式橙色大气html5企业网站模板</span>
-                    <span class="muted">2018-02-01</span>
-                    <span class="muted">
-                  <span class="ds-thread-count" data-replace="1">307次阅读</span>
+                  <img src="/static/picture/20170407113525114.jpg" alt="FTP连接虚拟主机响应220 Welcome to www.net.cn FTP service." title="FTP连接虚拟主机响应220 Welcome to www.net.cn FTP service."/></span>
+                <span class="text">FTP连接虚拟主机响应220 Welcome to www.net.cn FTP service.</span>
+                <span class="muted">2018-01-07</span>
+                <span class="muted">
+                  <span class="ds-thread-count" data-replace="1">356次阅读</span>
                 </span>
-                </a></li>
-                <li><a href="http://blog.yzmcms.com/html/htm/130.html">
+              </a></li><li><a href="http://blog.yzmcms.com/html/server/123.html">
                 <span class="thumbnail">
-                  <img src="static/picture/20180125162352498.jpg" alt="YzmCMS模板-响应式HTML5黑白系个人网站主题"
-                       title="YzmCMS模板-响应式HTML5黑白系个人网站主题"/></span>
-                    <span class="text">YzmCMS模板-响应式HTML5黑白系个人网站主题</span>
-                    <span class="muted">2018-01-25</span>
-                    <span class="muted">
-                  <span class="ds-thread-count" data-replace="1">388次阅读</span>
+                  <img src="/static/picture/20171230114530485.jpg" alt="Linux中常用操作命令" title="Linux中常用操作命令"/></span>
+                <span class="text">Linux中常用操作命令</span>
+                <span class="muted">2017-12-30</span>
+                <span class="muted">
+                  <span class="ds-thread-count" data-replace="1">115次阅读</span>
                 </span>
-                </a></li>
-                <li><a href="http://blog.yzmcms.com/html/htm/120.html">
+              </a></li><li><a href="http://blog.yzmcms.com/html/server/121.html">
                 <span class="thumbnail">
-                  <img src="static/picture/20171219212052361.png" alt="YzmCMS响应式简约模板" title="YzmCMS响应式简约模板"/></span>
-                    <span class="text">YzmCMS响应式简约模板</span>
-                    <span class="muted">2017-12-19</span>
-                    <span class="muted">
-                  <span class="ds-thread-count" data-replace="1">382次阅读</span>
+                  <img src="/static/picture/20171227225821497.png" alt="Window下安装Redis并设置为开机启动" title="Window下安装Redis并设置为开机启动"/></span>
+                <span class="text">Window下安装Redis并设置为开机启动</span>
+                <span class="muted">2017-12-25</span>
+                <span class="muted">
+                  <span class="ds-thread-count" data-replace="1">134次阅读</span>
                 </span>
-                </a></li>
-                <li><a href="http://blog.yzmcms.com/html/htm/112.html">
-                <span class="thumbnail">
-                  <img src="static/picture/20170912181019710.jpg" alt="YzmCMS红色响应式博客模板" title="YzmCMS红色响应式博客模板"/></span>
-                    <span class="text">YzmCMS红色响应式博客模板</span>
-                    <span class="muted">2017-09-12</span>
-                    <span class="muted">
-                  <span class="ds-thread-count" data-replace="1">444次阅读</span>
-                </span>
-                </a></li>
-                <li><a href="http://blog.yzmcms.com/html/php/98.html">
-                <span class="thumbnail">
-                  <img src="static/picture/20170423115418503.jpg" alt="分享YzmCMS一款pepe(响应式)简约博客模板"
-                       title="分享YzmCMS一款pepe(响应式)简约博客模板"/></span>
-                    <span class="text">分享YzmCMS一款pepe(响应式)简约博客模板</span>
-                    <span class="muted">2017-04-23</span>
-                    <span class="muted">
-                  <span class="ds-thread-count" data-replace="1">586次阅读</span>
-                </span>
-                </a></li>
-            </ul>
+              </a></li>          </ul>
         </div>
-        <div class="widget d_textbanner">
-            <h3 class="widget_tit">文章归档(近18个月)</h3>
-            <ul style="margin-top:15px">
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1522678932" target="_blank">2018年04月(1)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1520265655" target="_blank">2018年03月(8)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1517419880" target="_blank">2018年02月(5)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1515499416" target="_blank">2018年01月(8)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1513689645" target="_blank">2017年12月(4)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1509717478" target="_blank">2017年11月(3)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1504368191" target="_blank">2017年09月(7)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1502979738" target="_blank">2017年08月(1)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1499085819" target="_blank">2017年07月(4)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1497869973" target="_blank">2017年06月(1)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1494562857" target="_blank">2017年05月(5)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1491128002"
-                       target="_blank">2017年04月(10)</a></li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1488816014" target="_blank">2017年03月(9)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1486273384" target="_blank">2017年02月(4)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1483616755" target="_blank">2017年01月(7)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1480605145" target="_blank">2016年12月(4)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1479652210" target="_blank">2016年11月(1)</a>
-                </li>
-                <li><a href="http://blog.yzmcms.com/plus/search.php?archives=1475901101" target="_blank">2016年10月(2)</a>
-                </li>
-            </ul>
-        </div>
-        <div class="widget d_textbanner">
-            <h3>分享网站</h3>
-            <div class="sidebar_share">
-                <a rel="nofollow" class="share_weixin" onclick='yzmcms_share_wechat("http://blog.yzmcms.com");'
-                   title="分享到微信">微信</a>
-                <a rel="nofollow"
-                   href="http://connect.qq.com/widget/shareqq/index.html?title=分享一个不错的网站&summary=http://blog.yzmcms.com&pics=&url=http://blog.yzmcms.com"
-                   class="share_qq" target="_blank" title="分享到QQ">Q Q</a>
-                <a rel="nofollow"
-                   href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.yzmcms.com&desc=分享一个不错的网站"
-                   class="share_qzone" target="_blank" title="分享到QQ空间">空间</a>
-                <a rel="nofollow"
-                   href="http://service.weibo.com/share/share.php?url=http://blog.yzmcms.com&title=分享一个不错的网站&appkey=&searchPic=true"
-                   class="share_weibo" target="_blank" title="分享到微博">微博</a>
-            </div>
-        </div>
-    </aside>
-</section>
+		<div class="widget d_textbanner">
+		<h3 class="widget_tit">文章归档(近18个月)</h3>
+          <ul style="margin-top:15px">
+			<li><a href="http://blog.yzmcms.com/plus/search.php?archives=1522678932" target="_blank">2018年04月(4)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1520265655" target="_blank">2018年03月(8)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1517419880" target="_blank">2018年02月(5)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1515499416" target="_blank">2018年01月(8)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1513689645" target="_blank">2017年12月(4)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1509717478" target="_blank">2017年11月(3)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1504368191" target="_blank">2017年09月(7)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1502979738" target="_blank">2017年08月(1)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1499085819" target="_blank">2017年07月(4)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1497869973" target="_blank">2017年06月(1)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1494562857" target="_blank">2017年05月(5)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1491128002" target="_blank">2017年04月(10)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1488816014" target="_blank">2017年03月(9)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1486273384" target="_blank">2017年02月(4)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1483616755" target="_blank">2017年01月(7)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1480605145" target="_blank">2016年12月(4)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1479652210" target="_blank">2016年11月(1)</a></li><li><a href="http://blog.yzmcms.com/plus/search.php?archives=1475901101" target="_blank">2016年10月(2)</a></li>          </ul>
+		</div>
+		<div class="widget d_textbanner">
+			<h3>分享网站</h3>
+			<div class="sidebar_share">
+			<a rel="nofollow" class="share_weixin" onclick='yzmcms_share_wechat("http://blog.yzmcms.com");' title="分享到微信">微信</a>
+			<a rel="nofollow" href="http://connect.qq.com/widget/shareqq/index.html?title=分享一个不错的网站&summary=http://blog.yzmcms.com&pics=&url=http://blog.yzmcms.com" class="share_qq" target="_blank" title="分享到QQ">Q Q</a>
+			<a rel="nofollow" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.yzmcms.com&desc=分享一个不错的网站" class="share_qzone" target="_blank" title="分享到QQ空间">空间</a>
+			<a rel="nofollow" href="http://service.weibo.com/share/share.php?url=http://blog.yzmcms.com&title=分享一个不错的网站&appkey=&searchPic=true" class="share_weibo" target="_blank" title="分享到微博">微博</a>
+			</div>
+		</div>
+      </aside>
+    </section>
 <script>
-    $(function () {
-        $('.emotion').qqFace({
-            // path:'/common/images/face/'
-        });
+$(function(){
+    $('.emotion').qqFace({
+        path:'/common/images/face/'
     });
+});
 </script>
-<footer class="footer">
-    <div class="footer-inner">
+    <footer class="footer">
+      <div class="footer-inner">
         <div style="padding:0 20px;overflow:hidden;">
-            <div class="copyright pull-left">
-                <a href='http://blog.yzmcms.com/plus/guestbook.php'>留言联系</a>
-                <a href="http://blog.yzmcms.com/" target="_blank">Copyright © 2014-2018, YzmCMS All Rights
-                    Reserved. </a>| 京ICP备16034624号
-            </div>
-            <div class="trackcode pull-right">
-                <script src="static/js/z_stat.js" language="JavaScript"></script>
-            </div>
+          <div class="copyright pull-left">
+            <a href='http://blog.yzmcms.com/plus/guestbook.php'>留言联系</a>
+            <a href="http://blog.yzmcms.com/" target="_blank">Copyright © 2014-2018, YzmCMS All Rights Reserved. </a>| 京ICP备16034624号</div>
+          <div class="trackcode pull-right"><script src="/static/js/z_stat.js" language="JavaScript"></script></div>
         </div>
-    </div>
-</footer>
-<div id="button">
-    <a href="javascript:;" rel="nofollow" class="totop" title="返回顶部"></a>
-    <a href="http://www.yzmcms.com/" target="_blank" class="guanwang" title="返回官网"></a>
-    <a href="http://blog.yzmcms.com/plus/guestbook.php" target="_blank" class="lianxi" title="留言联系"></a>
-</div>
+      </div>
+    </footer>
+	<div id="button">
+	<a href="javascript:;" rel="nofollow" class="totop" title="返回顶部"></a>
+	<a href="http://www.yzmcms.com/" target="_blank" class="guanwang" title="返回官网"></a>
+	<a href="http://blog.yzmcms.com/plus/guestbook.php"  target="_blank" class="lianxi" title="留言联系"></a>
+	</div>
 
-<div id="outerdiv"
-     style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
+    <div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
     <div id="innerdiv" style="position:absolute;">
-        <img id="bigimg" style="border:5px solid #fff;" src=""/>
+        <img id="bigimg" style="border:5px solid #fff;" src="" />
     </div>
-</div>
-<script type="text/javascript" src="static/js/preview_image.js"></script>
+	</div>
+	<script type="text/javascript" src="/static/js/preview_image.js"></script>
 
-<div id="share_wechat"
-     style="display:none;position:fixed;left:0%;top:0%;z-index:99;width:100%;height:100%;background:url(static/images/alpha.png);">
-    <div style="position:fixed;border-radius:3px;left:50%;top:50%;z-index:100;width:260px;margin-left:-140px;margin-top:-200px;background:#fff;padding:20px 25px 15px 25px;text-align:center">
-        <span title="关闭" onclick="yzmcms_share_wechat()"
-              style="width:100%;font-size:14px;color:#333;cursor:pointer;margin-bottom:10px;float:right;text-align:right">关闭</span><img
-            src="static/picture/share_code.png" width="220">
-        <p style="text-align:center;font-size:16px">用微信“扫一扫”</p></div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(function () {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 300) {
-                    $('.totop').fadeIn();
-                } else {
-                    $('.totop').fadeOut();
-                }
-            });
-            $('.totop').click(function () {
-                $('body,html').animate({scrollTop: 0}, 300);
+   <div id="share_wechat" style="display:none;position:fixed;left:0%;top:0%;z-index:99;width:100%;height:100%;background:url(/static/images/alpha.png);"><div style="position:fixed;border-radius:3px;left:50%;top:50%;z-index:100;width:260px;margin-left:-140px;margin-top:-200px;background:#fff;padding:20px 25px 15px 25px;text-align:center"><span title="关闭" onclick="yzmcms_share_wechat()" style="width:100%;font-size:14px;color:#333;cursor:pointer;margin-bottom:10px;float:right;text-align:right">关闭</span><img src="/static/picture/share_code.png" width="220"><p style="text-align:center;font-size:16px">用微信“扫一扫”</p></div></div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+            $(function(){
+                $(window).scroll(function(){
+                    if($(this).scrollTop() > 300){
+                        $('.totop').fadeIn();
+                    }else{
+                        $('.totop').fadeOut();
+                    }
+                });
+                $('.totop').click(function(){
+                    $('body,html').animate({scrollTop:0},300);
+                })
             })
-        })
 
-    });
+        });
 
-    function yzmcms_share_wechat() {
-        $("#share_wechat").toggle();
-    }
-
-    window.onload = function () {
-        var nav_box = document.getElementsByClassName("nav_box")[0];
-        var ul = document.getElementsByClassName("nav_ul")[0];
-        nav_box.onclick = function () {
-            var style = ul.style;
-            style.display = style.display == "block" ? "none" : "block";
-            nav_box.className = style.display == "block" ? "open" : ""
+        function yzmcms_share_wechat(){
+            $("#share_wechat").toggle();
         }
-    }
-</script>
-</body>
+
+        window.onload = function (){
+            var nav_box = document.getElementsByClassName("nav_box")[0];
+            var ul = document.getElementsByClassName("nav_ul")[0];
+            nav_box.onclick = function (){
+                var style = ul.style;
+                style.display = style.display == "block" ? "none" : "block";
+                nav_box.className = style.display == "block" ? "open" : ""
+            }
+        }
+	</script>
+  </body>
 </html>
