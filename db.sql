@@ -36,7 +36,9 @@ create table `b_category`(
 `id` int primary key not null auto_increment,
 `cat_name` varchar(20) not null default '',
 `cat_description` text default '',
-`pid` int
+`level` int not null default 0 comment '等级',
+`pid` int comment '父级id',
+`path` varchar(10) comment 'pid+,+id标识，用于无限级分类'
 );
 
 --创建标签表

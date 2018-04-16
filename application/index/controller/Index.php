@@ -1,10 +1,13 @@
 <?php
 namespace app\index\controller;
 
-class Index
+use think\Controller;
+
+class Index extends Controller
 {
     public function index()
     {
-        return "这是我的个人博客";
+//        var_dump(123);die;
+        return $this->fetch();
     }
 }
