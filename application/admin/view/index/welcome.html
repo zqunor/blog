@@ -87,31 +87,31 @@
 			</tr>
 			<tr>
 				<td>服务器IP地址</td>
-				<td>192.168.1.1</td>
+				<td>{$_SERVER['SERVER_ADDR']}</td>
 			</tr>
 			<tr>
 				<td>服务器域名</td>
-				<td>www.h-ui.net</td>
+				<td>{$_SERVER['SERVER_NAME']}</td>
 			</tr>
 			<tr>
 				<td>服务器端口 </td>
-				<td>80</td>
+				<td>{$_SERVER['SERVER_PORT']}</td>
 			</tr>
 			<tr>
-				<td>服务器IIS版本 </td>
-				<td>Microsoft-IIS/6.0</td>
+				<td>服务器版本 </td>
+				<td>{$_SERVER ['SERVER_SOFTWARE']}</td>
 			</tr>
 			<tr>
 				<td>本文件所在文件夹 </td>
-				<td>D:\WebSite\HanXiPuTai.com\XinYiCMS.Web\</td>
+				<td>{$_SERVER['DOCUMENT_ROOT']}</td>
 			</tr>
 			<tr>
 				<td>服务器操作系统 </td>
-				<td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
+				<td>{PHP_OS;}</td>
 			</tr>
 			<tr>
 				<td>系统所在文件夹 </td>
-				<td>C:\WINDOWS\system32</td>
+				<td>{$_SERVER['DOCUMENT_ROOT']}</td>
 			</tr>
 			<tr>
 				<td>服务器脚本超时时间 </td>
@@ -122,12 +122,9 @@
 				<td>Chinese (People's Republic of China)</td>
 			</tr>
 			<tr>
-				<td>.NET Framework 版本 </td>
-				<td>2.050727.3655</td>
-			</tr>
-			<tr>
 				<td>服务器当前时间 </td>
-				<td>2014-6-14 12:06:23</td>
+				<td>{date_default_timezone_set('PRC'); echo date("Y-m-d h:i:s");
+				}</td>
 			</tr>
 			<tr>
 				<td>服务器IE版本 </td>
@@ -167,7 +164,7 @@
 			</tr>
 			<tr>
 				<td>当前SessionID </td>
-				<td>gznhpwmp34004345jz2q3l45</td>
+				<td>{session_id()}</td>
 			</tr>
 			<tr>
 				<td>当前系统用户名 </td>
