@@ -36,7 +36,7 @@ return [
     'link' => 'admin/index/link',
     'comment' => 'admin/index/comment',
     'message' => 'admin/index/message',
-    'about' => 'admin/index/about',
+    // 'about' => 'admin/index/about',
 
     // 测试路由
     'test' => 'index/index/test',
