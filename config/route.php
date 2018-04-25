@@ -30,12 +30,13 @@ return [
     // 后台路由
     'admin' => 'admin/index/index',
     'welcome' => 'admin/index/welcome',
-    'article' => 'admin/index/article',
-    'category' => 'admin/index/category',
-    'tag' => 'admin/index/tag',
-    'link' => 'admin/index/link',
-    'comment' => 'admin/index/comment',
-    'message' => 'admin/index/message',
+    'article' => 'admin/article/index',
+    'add' => 'admin/article/add',
+    'category' => 'admin/category/index',
+    'tag' => 'admin/tag/index',
+    'link' => 'admin/link/index',
+    'comment' => 'admin/comment/index',
+    'message' => 'admin/message/index',
     // 'about' => 'admin/index/about',
 
     // 测试路由

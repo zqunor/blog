@@ -17,11 +17,12 @@ class Index extends Controller
     public function category()
     {
         $cate = input('cate');
-        $contents = db('category cate')->where('cate.name',$cate)
-            ->join('content cont', 'cate.id = cont.cat_id', 'right')
-            ->select();
+        $where['name'] = $cate;
+        // $contents = db('category')->where($where)
+        //     ->join('content cont', 'category.id = cont.cat_id', 'right')
+        //     ->select();
 
-        $this->assigin('contents', $contents);
+        // $this->assigin('contents', $contents);
         return $this->fetch('category');
     }
 
@@ -32,7 +33,7 @@ class Index extends Controller
     {
         $content_id = input('id');
         $content = db('article')->where('id', $content_id)->find();
-        return $this->fetch('detail',['content'=>$content]);
+        return $this->fetch('detail', ['content'=>$content]);
     }
 
     /**

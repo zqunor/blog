@@ -22,6 +22,7 @@ create table `zxwfd_content`(
 `cat_id` int,
 `tag_id` int,
 `modify_time` int default 0,
+`status` tinyint default 0,
 FOREIGN KEY(`cat_id`) REFERENCES `zxwfd_category`(`id`),
 FOREIGN KEY(`tag_id`) REFERENCES `zxwfd_tag`(`id`)
 );
@@ -41,7 +42,7 @@ create table `zxwfd_category`(
 `cat_name` varchar(20) not null default '',
 `cat_description` text default '',
 `pid` int not null default 0,
-`path` varchar(10) not null default '' comment 'pid+,+id标识，用于无限级分类',
+`path` varchar(10) not null default '',
 FOREIGN KEY (`pid`) REFERENCES `zxwfd_category` (`id`)
 );
 
