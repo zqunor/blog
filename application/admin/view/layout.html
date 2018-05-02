@@ -3,7 +3,7 @@
 
 <head>
     {include file="admin@common/_meta" /}
-    <title>{block name="title"}后台{/block}</title>
+    <title>{block name="title"}后台{/block} | 后台管理系统</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <i class="Hui-iconfont"></i>
             <a href="/" class="maincolor">首页</a>
             <span class="c-999 en">&gt;</span>
-            <span class="c-666">{block name="breadcrumb"}{/block}</span>
+            {block name="breadcrumb"}{/block}
             <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
 			 title="刷新">
 				<i class="Hui-iconfont">&#xe68f;</i>

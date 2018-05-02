@@ -19,27 +19,27 @@ return [
     ],
 
     // 前端路由
-    '/' => 'index/index/index',
-    'about' => 'index/index/about',
+    // '/' => 'index/index/index',
+    // 'about' => 'index/index/about',
 
-    ':cate' => 'index/index/category',
+    // ':cate' => 'index/index/category',
 
-    'liuyan' => 'index/index/liuyan',
-    'detail/:id' => 'index/index/detail',
+    // 'liuyan' => 'index/index/liuyan',
+    // 'detail/:id' => 'index/index/detail',
 
     // 后台路由
-    'admin' => 'admin/index/index',
-    'welcome' => 'admin/index/welcome',
-    'article' => 'admin/article/index',
-    'add' => 'admin/article/add',
-    'category' => 'admin/category/index',
-    'tag' => 'admin/tag/index',
-    'link' => 'admin/link/index',
-    'comment' => 'admin/comment/index',
-    'message' => 'admin/message/index',
+    // 'admin' => 'admin/index/index',
+    // 'welcome' => 'admin/index/welcome',
+    // 'article' => 'admin/article/index',
+    // 'add' => 'admin/article/add',
+    // 'category' => 'admin/category/index',
+    // 'tag' => 'admin/tag/index',
+    // 'link' => 'admin/link/index',
+    // 'comment' => 'admin/comment/index',
+    // 'message' => 'admin/message/index',
     // 'about' => 'admin/index/about',
 
     // 测试路由
-    'test' => 'index/index/test',
+    // 'test' => 'index/index/test',
 
 ];

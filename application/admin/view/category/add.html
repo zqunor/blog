@@ -1,0 +1,116 @@
+{extend name="admin@layout" /} {block name="title"}文章管理{/block} {block name="breadcrumb"}
+
+<span class="c-666">
+  文章管理
+</span>
+{/block} {block name="body"}
+<div class="pd-20 text-c">
+  <form class="Huiform" action="/" method="post">
+    <div class="text-c">
+      上级栏目:
+      <span class="select-box inline">
+        <select class="select" id="" name="">
+          <option value="0">顶级分类</option>
+          <option value="10">分类一级</option>
+          <option value="101">&nbsp;&nbsp;├ 分类二级</option>
+          <option value="102">&nbsp;&nbsp;├ 分类二级</option>
+          <option value="20">分类一级</option>
+          <option value="200">&nbsp;&nbsp;├ 分类二级</option>
+        </select>
+      </span> 
+      <input type="hidden" id="" name="">
+      <button type="submit" class="btn btn-primary radius" id="" name="">
+        <i class="Hui-iconfont">&#xe600;</i> 添加字典</button>
+    </div>
+
+
+    <div class="row cl">
+      <label class="form-label col-sm-2">
+        <span class="c-red">*</span>上级栏目：
+      </label>
+      <div class="formControls col-xs-5 col-sm-5">
+        <span class="select-box">
+          <select class="select" id="sel_Sub" name="sel_Sub" onchange="SetSubID(this);">
+            <option value="0">顶级分类</option>
+            <option value="10">分类一级</option>
+            <option value="101">&nbsp;&nbsp;├ 分类二级</option>
+            <option value="102">&nbsp;&nbsp;├ 分类二级</option>
+            <option value="20">分类一级</option>
+            <option value="200">&nbsp;&nbsp;├ 分类二级</option>
+          </select>
+        </span>
+      </div>
+      <input type="hidden" id="hid_ccid" value="">
+      <input class="input-text" style="width:250px" type="text" value="" placeholder="输入分类" id="article-class-val">
+      <button type="button" class="btn btn-success" id="" name="" onClick="article_class_add(this);">
+        <i class="icon-plus"></i> 添加</button>
+
+    </div>
+  </form>
+  <div class="article-class-list cl mt-20">
+    <table class="table table-border table-bordered table-hover table-bg">
+      <thead>
+        <tr class="text-c">
+          <th width="25">
+            <input type="checkbox" name="" value="">
+          </th>
+          <th width="80">ID</th>
+          <th width="80">排序</th>
+          <th>分类名称</th>
+          <th width="70">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-c">
+          <td>
+            <input type="checkbox" name="" value="">
+          </td>
+          <td>1</td>
+          <td>1</td>
+          <td class="text-l">一级分类</td>
+          <td class="f-14">
+            <a title="编辑" href="javascript:;" onclick="article_class_edit('1','620','160','分类编辑','article-class-edit.html')" style="text-decoration:none">
+              <i class="icon-edit"></i>
+            </a>
+            <a title="删除" href="javascript:;" onclick="article_class_del(this,'1')" class="ml-5" style="text-decoration:none">
+              <i class="icon-trash"></i>
+            </a>
+          </td>
+        </tr>
+        <tr class="text-c">
+          <td>
+            <input type="checkbox" name="" value="">
+          </td>
+          <td>2</td>
+          <td>2</td>
+          <td class="text-l">&nbsp;&nbsp;├&nbsp;二级分类</td>
+          <td class="f-14">
+            <a title="编辑" href="javascript:;" onclick="article_class_edit('2','620','160','分类编辑','article-class-edit.html')" style="text-decoration:none">
+              <i class="icon-edit"></i>
+            </a>
+            <a title="删除" href="javascript:;" onclick="article_class_del(this,'2')" class="ml-5" style="text-decoration:none">
+              <i class="icon-trash"></i>
+            </a>
+          </td>
+        </tr>
+        <tr class="text-c">
+          <td>
+            <input type="checkbox" name="" value="">
+          </td>
+          <td>3</td>
+          <td>3</td>
+          <td class="text-l">&nbsp;&nbsp;├&nbsp;二级分类</td>
+          <td class="f-14">
+            <a title="编辑" href="javascript:;" onclick="article_class_edit('3','620','160','分类编辑','article-class-edit.html')" style="text-decoration:none">
+              <i class="icon-edit"></i>
+            </a>
+            <a title="删除" href="javascript:;" onclick="article_class_del(this,'3')" class="ml-5" style="text-decoration:none">
+              <i class="icon-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{/block}
